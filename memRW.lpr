@@ -198,8 +198,9 @@ end;
 result:=true;
 end;
 
+//https://guidedhacking.com/threads/how-to-bypass-kernel-anticheat-develop-drivers.11325/
 begin
-//writeln(stringreplace(ExtractFileName (ParamStr (1)),ExtractFileExt (ParamStr (1)),'',[]));
+if paramcount=0 then exit;
 if paramstr(1)='load'
    then LoadDriver (ParamStr (2),stringreplace(ExtractFileName (ParamStr (2)),ExtractFileExt (ParamStr (2)),'',[]));
 if paramstr(1)='unload'
@@ -222,6 +223,7 @@ if paramstr(1)='open' then
   //ptr := VirtualAllocEx(Process, nil, $1000, MEM_RESERVE or MEM_COMMIT, PAGE_READWRITE);
   //writeln(inttohex(nativeuint(ptr),sizeof(lpvoid)));
 
+  //https://docs.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights
   dw:=0;
   if NtQueryObject(process, ObjectBasicInformation, @obi, sizeof(obi), @dw)=0
       then writeln('access_mask:'+inttohex(obi.GrantedAccess,sizeof(access_mask) ))
