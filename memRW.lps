@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Count="2" Active="Release">
+      <Item1 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="memRW"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+          </Linking>
+        </CompilerOptions>
+      </Item1>
+      <Item2 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="memRW"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <Units Count="5">
+      <Unit0>
+        <Filename Value="memRW.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="208"/>
+        <CursorPos X="86" Y="222"/>
+        <UsageCount Value="75"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="241"/>
+        <CursorPos X="6" Y="255"/>
+        <UsageCount Value="4"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="489"/>
+        <CursorPos X="19" Y="502"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="3609"/>
+        <CursorPos X="6" Y="3623"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1309"/>
+        <CursorPos X="10" Y="1323"/>
+        <UsageCount Value="4"/>
+      </Unit4>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="6" Column="6" TopLine="3"/>
+      </Position1>
+      <Position2>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="11" Column="29"/>
+      </Position2>
+      <Position3>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="35" Column="19" TopLine="22"/>
+      </Position3>
+      <Position4>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="199" Column="72" TopLine="177"/>
+      </Position4>
+      <Position5>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="208" Column="69" TopLine="185"/>
+      </Position5>
+      <Position6>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="207" Column="78" TopLine="186"/>
+      </Position6>
+      <Position7>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="208" Column="62" TopLine="188"/>
+      </Position7>
+      <Position8>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="44" Column="10" TopLine="30"/>
+      </Position8>
+      <Position9>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="44" Column="10" TopLine="30"/>
+      </Position9>
+      <Position10>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="205" Column="32" TopLine="194"/>
+      </Position10>
+      <Position11>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="227" Column="71" TopLine="204"/>
+      </Position11>
+      <Position12>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="226" Column="49" TopLine="204"/>
+      </Position12>
+      <Position13>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="227" Column="76" TopLine="205"/>
+      </Position13>
+      <Position14>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="176" Column="59" TopLine="170"/>
+      </Position14>
+      <Position15>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="190" Column="35" TopLine="167"/>
+      </Position15>
+      <Position16>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="184" TopLine="167"/>
+      </Position16>
+      <Position17>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="189" Column="50" TopLine="197"/>
+      </Position17>
+      <Position18>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="216" Column="12" TopLine="197"/>
+      </Position18>
+      <Position19>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="217" Column="26" TopLine="207"/>
+      </Position19>
+      <Position20>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="229" Column="84" TopLine="208"/>
+      </Position20>
+      <Position21>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="47" Column="13" TopLine="26"/>
+      </Position21>
+      <Position22>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="235" Column="41" TopLine="213"/>
+      </Position22>
+      <Position23>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="230" Column="64" TopLine="164"/>
+      </Position23>
+      <Position24>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="7" Column="56"/>
+      </Position24>
+      <Position25>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="650" Column="25" TopLine="626"/>
+      </Position25>
+      <Position26>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="946" Column="18" TopLine="922"/>
+      </Position26>
+      <Position27>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="948" Column="18" TopLine="924"/>
+      </Position27>
+      <Position28>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="1115" Column="23" TopLine="1088"/>
+      </Position28>
+      <Position29>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="222" Column="82" TopLine="215"/>
+      </Position29>
+      <Position30>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="221" Column="81" TopLine="208"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

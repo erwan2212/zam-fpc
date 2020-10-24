@@ -1,0 +1,4 @@
+*.compiled
+*.o
+*.a
+*.bak
