@@ -207,7 +207,7 @@ if paramstr(1)='unload'
    then UnloadDriver(stringreplace(ExtractFileName (ParamStr (2)),ExtractFileExt (ParamStr (2)),'',[])) ;
 if paramstr(1)='open' then
   begin
-  //open handle
+  //open handle to driver
   svc:=ZemanaOpenHandle('\\.\ZemanaAntiMalware');
   if svc=thandle(-1) then begin writeln('handle failed');exit;end;
   //register process
