@@ -207,7 +207,7 @@ if paramstr(1)='unload'
    then UnloadDriver(stringreplace(ExtractFileName (ParamStr (2)),ExtractFileExt (ParamStr (2)),'',[])) ;
 if paramstr(1)='open' then
   begin
-  //open handle to driver
+  //open handle
   svc:=ZemanaOpenHandle('\\.\ZemanaAntiMalware');
   if svc=thandle(-1) then begin writeln('handle failed');exit;end;
   //register process
@@ -235,8 +235,8 @@ if paramstr(1)='open' then
       then writeln('access_mask:'+inttohex(obi.GrantedAccess,sizeof(access_mask) ))
       else writeln('lasterror:'+inttostr(getlasterror));
   }
-  writeln('TerminateProcess:'+BoolToStr (TerminateProcess (process,0)));
-  //if process<>thandle(-1) then writeln('GetNextThread:'+BoolToStr(GetNextThread (process )));
+  //writeln('TerminateProcess:'+BoolToStr (TerminateProcess (dup,0)));
+  if process<>thandle(-1) then writeln('GetNextThread:'+BoolToStr(GetNextThread (process )));
   if process<>thandle(-1) then writeln('closehandle:'+BoolToStr(closehandle(process)));
   if dup<>thandle(-1) then writeln('closehandle:'+BoolToStr(closehandle(dup)));
   if svc<>thandle(-1) then writeln('closehandle:'+BoolToStr(closehandle(svc)));
