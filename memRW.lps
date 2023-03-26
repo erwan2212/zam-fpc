@@ -67,14 +67,14 @@
         </CompilerOptions>
       </Item2>
     </BuildModes>
-    <Units Count="5">
+    <Units Count="6">
       <Unit0>
         <Filename Value="memRW.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="208"/>
-        <CursorPos X="86" Y="222"/>
-        <UsageCount Value="75"/>
+        <TopLine Value="43"/>
+        <CursorPos X="30" Y="56"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -87,9 +87,9 @@
       <Unit2>
         <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="489"/>
-        <CursorPos X="19" Y="502"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="1097"/>
+        <CursorPos X="23" Y="1115"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -97,7 +97,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="3609"/>
         <CursorPos X="6" Y="3623"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -107,127 +107,134 @@
         <CursorPos X="10" Y="1323"/>
         <UsageCount Value="4"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\func.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="104"/>
+        <CursorPos X="10" Y="116"/>
+        <UsageCount Value="10"/>
+      </Unit5>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="6" Column="6" TopLine="3"/>
+        <Caret Line="227" Column="76" TopLine="205"/>
       </Position1>
       <Position2>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="11" Column="29"/>
+        <Caret Line="176" Column="59" TopLine="170"/>
       </Position2>
       <Position3>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="35" Column="19" TopLine="22"/>
+        <Caret Line="190" Column="35" TopLine="167"/>
       </Position3>
       <Position4>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="199" Column="72" TopLine="177"/>
+        <Caret Line="184" TopLine="167"/>
       </Position4>
       <Position5>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="208" Column="69" TopLine="185"/>
+        <Caret Line="216" Column="12" TopLine="197"/>
       </Position5>
       <Position6>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="207" Column="78" TopLine="186"/>
+        <Caret Line="217" Column="26" TopLine="207"/>
       </Position6>
       <Position7>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="208" Column="62" TopLine="188"/>
+        <Caret Line="229" Column="84" TopLine="208"/>
       </Position7>
       <Position8>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="44" Column="10" TopLine="30"/>
+        <Caret Line="47" Column="13" TopLine="26"/>
       </Position8>
       <Position9>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="44" Column="10" TopLine="30"/>
+        <Caret Line="235" Column="41" TopLine="213"/>
       </Position9>
       <Position10>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="205" Column="32" TopLine="194"/>
+        <Caret Line="230" Column="64" TopLine="164"/>
       </Position10>
       <Position11>
-        <Filename Value="memRW.lpr"/>
-        <Caret Line="227" Column="71" TopLine="204"/>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="7" Column="56"/>
       </Position11>
       <Position12>
-        <Filename Value="memRW.lpr"/>
-        <Caret Line="226" Column="49" TopLine="204"/>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="650" Column="25" TopLine="626"/>
       </Position12>
       <Position13>
-        <Filename Value="memRW.lpr"/>
-        <Caret Line="227" Column="76" TopLine="205"/>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="946" Column="18" TopLine="922"/>
       </Position13>
       <Position14>
-        <Filename Value="memRW.lpr"/>
-        <Caret Line="176" Column="59" TopLine="170"/>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="948" Column="18" TopLine="924"/>
       </Position14>
       <Position15>
-        <Filename Value="memRW.lpr"/>
-        <Caret Line="190" Column="35" TopLine="167"/>
+        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
+        <Caret Line="1115" Column="23" TopLine="1088"/>
       </Position15>
       <Position16>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="184" TopLine="167"/>
+        <Caret Line="222" Column="82" TopLine="215"/>
       </Position16>
       <Position17>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="189" Column="50" TopLine="197"/>
+        <Caret Line="221" Column="81" TopLine="208"/>
       </Position17>
       <Position18>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="216" Column="12" TopLine="197"/>
+        <Caret Line="217" Column="23" TopLine="208"/>
       </Position18>
       <Position19>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="217" Column="26" TopLine="207"/>
+        <Caret Line="238" Column="5" TopLine="219"/>
       </Position19>
       <Position20>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="229" Column="84" TopLine="208"/>
+        <Caret Line="235" Column="34" TopLine="227"/>
       </Position20>
       <Position21>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="47" Column="13" TopLine="26"/>
+        <Caret Line="155" TopLine="143"/>
       </Position21>
       <Position22>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="235" Column="41" TopLine="213"/>
+        <Caret Line="234" Column="53" TopLine="222"/>
       </Position22>
       <Position23>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="230" Column="64" TopLine="164"/>
+        <Caret Line="232" Column="54" TopLine="222"/>
       </Position23>
       <Position24>
-        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
-        <Caret Line="7" Column="56"/>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="241" Column="16" TopLine="219"/>
       </Position24>
       <Position25>
-        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
-        <Caret Line="650" Column="25" TopLine="626"/>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="74" Column="39" TopLine="50"/>
       </Position25>
       <Position26>
-        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
-        <Caret Line="946" Column="18" TopLine="922"/>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="55" Column="27" TopLine="50"/>
       </Position26>
       <Position27>
-        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
-        <Caret Line="948" Column="18" TopLine="924"/>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="282" Column="73" TopLine="264"/>
       </Position27>
       <Position28>
-        <Filename Value="C:\FPC\3.0.0\source\rtl\win\wininc\defines.inc"/>
-        <Caret Line="1115" Column="23" TopLine="1088"/>
+        <Filename Value="memRW.lpr"/>
+        <Caret Line="55" Column="35" TopLine="48"/>
       </Position28>
       <Position29>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="222" Column="82" TopLine="215"/>
+        <Caret Line="284" TopLine="268"/>
       </Position29>
       <Position30>
         <Filename Value="memRW.lpr"/>
-        <Caret Line="221" Column="81" TopLine="208"/>
+        <Caret Line="287" Column="27" TopLine="268"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

